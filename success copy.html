@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lonex - Store Checkout</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Hind Siliguri & Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+        }
+        .font-roboto {
+            font-family: 'Roboto', sans-serif;
+        }
+        /* Custom Colors from JSON */
+        .bg-brand-yellow { background-color: #F3F31E; }
+        .bg-brand-green { background-color: #008A13; }
+        .bg-brand-light-green { background-color: #5BD56C; }
+        .bg-brand-purple { background-color: #6F20CE; }
+        .bg-form-green { background-color: #C1FFE3; }
+        .text-brand-purple { color: #2C0752; }
+        
+        .btn-pulse {
+            animation: pulse-animation 2s infinite;
+        }
+        @keyframes pulse-animation {
+            0% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 0, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); }
+        }
+        
+        .clip-mountains {
+            clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 90%, 0 100%, 0 0);
+        }
+    </style>
+</head>
+<body class="bg-[#F8F6F8]">
+
+    <!-- SECTION 1: HERO -->
+    <section class="relative overflow-hidden pb-10">
+        <div class="container mx-auto px-4 max-w-4xl pt-10 text-center">
+            <!-- Headline -->
+            <div class="bg-yellow-300 border-4 border-double border-black rounded-lg p-4 mb-6 shadow-lg">
+                <h1 class="text-3xl md:text-4xl font-bold text-black leading-tight">
+                    লনেক্স ট্যাবলেট।<br/>
+                    ইউনানী মেডিসিন । <br/>
+                    <span class="text-xl md:text-2xl font-semibold mt-2 block">
+                        ইউনানী আয়ুর্বেদিক জগতের শ্রেষ্ঠ সেক্সের মেডিসিন <br>
+                        যেকোনো যৌন রোগের জন্য সর্বোচ্চ কার্যকর এবং সর্বাধিক নিরাপদ ইউনানী মেডিসিন
+                    </span>
+                </h1>
+            </div>
+
+            <!-- Product Image -->
+            <div class="flex justify-center -mt-6 mb-4 relative z-10">
+                <img src="https://www.healthandhousebd.com/wp-content/uploads/2025/10/f78a98b6-5c51-4cfe-8ce1-8c56fa5d4947.jpeg" 
+                     alt="Lonex Tablet" 
+                     class="rounded-lg shadow-xl w-full md:w-3/4 lg:w-2/3 border-4 border-white">
+            </div>
+
+            <!-- Features Text -->
+            <div class="bg-black/80 text-yellow-300 p-4 rounded-lg -mt-10 pt-12 relative z-0">
+                <p class="text-xl md:text-2xl font-bold leading-relaxed">
+                    মাথা ঝিমঝিম করা, মাথা ব্যথা করা, মাথা ঘোরা কোন কিছুই নেই ইনশাআল্লাহ,<br>
+                    শতভাগ কার্যকর,<br>
+                    সম্পূর্ণ পার্শ্ব প্রতিক্রিয়া মুক্ত ও ১০০% অরিজিনাল এবং ন্যাচারাল। স্থায়ীভাবে কাজ করে ইনশাআল্লাহ।
+                </p>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="mt-8">
+                <a href="#order" class="btn-pulse bg-green-700 hover:bg-green-800 text-white font-bold text-2xl py-4 px-8 rounded-lg border-2 border-white inline-flex items-center gap-3 transition transform hover:scale-105">
+                    অর্ডার করতে এখানে ক্লিক করুন 
+                    <i class="fas fa-shopping-bag text-3xl"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: PROBLEM & SOLUTION (GREEN) -->
+    <section class="bg-brand-green py-12 relative">
+        <!-- Wave Shape Divider Top -->
+        <div class="absolute top-0 left-0 w-full overflow-hidden leading-0 transform rotate-180">
+            <svg class="relative block w-[calc(100%+1.3px)] h-[50px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-[#F8F6F8]"></path>
+            </svg>
+        </div>
+
+        <div class="container mx-auto px-4 max-w-4xl text-center relative z-10">
+            <div class="bg-[#006e0f] p-6 rounded-lg shadow-xl mb-8 border-2 border-yellow-300">
+                <h2 class="text-2xl md:text-3xl font-bold text-yellow-300 leading-relaxed">
+                    যাদের কোন প্রকার ঔষধে কাজ হয় না, এমনকি ডায়াবেটিকস আছে, তাদের জন্য শতভাগ কার্যকর <br>
+                    গ্যারান্টি ইনশাআল্লাহ।
+                </h2>
+            </div>
+
+            <!-- Doctor Image -->
+            <div class="flex justify-center mb-8">
+                <img src="https://www.healthandhousebd.com/wp-content/uploads/2025/10/ce5583f3-cf95-4a0d-b174-44373fc114f1.jpeg" 
+                     alt="Doctor" 
+                     class="rounded-lg shadow-2xl border-4 border-white w-full md:w-3/4">
+            </div>
+
+            <!-- Phone Number Box -->
+            <div class="bg-brand-light-green p-6 rounded-lg shadow-inner mb-8 -mt-12 relative z-20 w-3/4 mx-auto border-4 border-white">
+                <div class="flex justify-center items-center gap-3 text-black font-bold text-3xl font-roboto">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>01874-580301</span>
+                </div>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="mt-8">
+                <a href="#order" class="bg-red-600 hover:bg-red-700 text-white font-bold text-2xl py-4 px-10 rounded-lg shadow-[0_0_20px_rgba(0,0,0,0.5)] border-2 border-white inline-flex items-center gap-3 transition">
+                    অর্ডার করতে এখানে ক্লিক করুন 
+                    <i class="fas fa-shopping-bag"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: BENEFITS (YELLOW) -->
+    <section class="bg-brand-yellow py-12">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <!-- Headline Box -->
+            <div class="bg-white/80 border-2 border-black rounded-lg p-4 mb-8 text-center shadow-lg max-w-2xl mx-auto">
+                <h2 class="text-4xl font-bold text-black drop-shadow-md">কার্যকারিতা</h2>
+            </div>
+
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold text-purple-900">
+                    <i class="fas fa-star text-sm align-middle"></i> কার্যকারিতা <i class="fas fa-star text-sm align-middle"></i>
+                </h2>
+            </div>
+
+            <div class="text-center text-brand-purple font-semibold text-xl md:text-2xl mb-10 px-4">
+                <p class="mb-4">লনেক্স ট্যাবলেটটি অত্যন্ত অত্যন্ত শক্তিশালী খুবই খুবই ভালো কাজ করে। আল্লাহর রহমতে এটা খাওয়ার পর থেকেই কাজ শুরু হয়।</p>
+                <p>বিবাহিত এবং অবিবাহিত সকল পুরুষদের জন্যই লনেক্স ট্যাবলেটটি অত্যন্ত অত্যন্ত কার্যকর ইনশাআল্লাহ ।</p>
+            </div>
+
+            <!-- Benefits Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Item 1 -->
+                <div class="bg-white/50 p-4 rounded-lg shadow-md hover:bg-white transition duration-300 border-l-4 border-green-600">
+                    <div class="flex items-start gap-4">
+                        <i class="fas fa-check-square text-green-600 text-3xl mt-1"></i>
+                        <p class="text-lg font-semibold text-gray-800">হস্তমৈথুনের ঘাটতি পূরণ করে। লিঙ্গের উত্থান জনিত সমস্যা কে স্থায়ীভাবে  দূর করে ইনশাআল্লাহ</p>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="bg-white/50 p-4 rounded-lg shadow-md hover:bg-white transition duration-300 border-l-4 border-green-600">
+                    <div class="flex items-start gap-4">
+                        <i class="fas fa-check-square text-green-600 text-3xl mt-1"></i>
+                        <p class="text-lg font-semibold text-gray-800">লিঙ্গে প্রচন্ড রক্ত সঞ্চালন বাড়ায়, ফলে লিঙ্গ অত্যন্ত অত্যন্ত শক্তিশালী হয়, বড় হয় এবং মোটা হয়। যা কোন ক্রিম বা মেসেজ অয়েল দিয়ে  কখনও হয় না।</p>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="bg-white/50 p-4 rounded-lg shadow-md hover:bg-white transition duration-300 border-l-4 border-green-600">
+                    <div class="flex items-start gap-4">
+                        <i class="fas fa-check-square text-green-600 text-3xl mt-1"></i>
+                        <p class="text-lg font-semibold text-gray-800">প্রচুর বীর্য ( টেস্টোস্টেরন হরমোন ) উৎপাদন করে,  শুক্রাণু  প্রচুর পরিমাণে বাড়ায়,  বীর্যকে খুব  গাড় করে, প্রস্রাবের ক্ষয় বন্ধ করে।</p>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="bg-white/50 p-4 rounded-lg shadow-md hover:bg-white transition duration-300 border-l-4 border-green-600">
+                    <div class="flex items-start gap-4">
+                        <i class="fas fa-check-square text-green-600 text-3xl mt-1"></i>
+                        <p class="text-lg font-semibold text-gray-800">দ্রুত বীর্যপাত রোধ করে। সহবাসের সময়কে বহু বহু বহুগুণে বৃদ্ধি করে ইনশাআল্লাহ</p>
+                    </div>
+                </div>
+                <!-- Item 5 -->
+                <div class="bg-white/50 p-4 rounded-lg shadow-md hover:bg-white transition duration-300 border-l-4 border-green-600">
+                    <div class="flex items-start gap-4">
+                        <i class="fas fa-check-square text-green-600 text-3xl mt-1"></i>
+                        <p class="text-lg font-semibold text-gray-800">কাম উদ্দীপনা বৃদ্ধি করে। ধ্বজভঙ্গকে চিরতরে দূর করে।</p>
+                    </div>
+                </div>
+                <!-- Item 6 -->
+                <div class="bg-white/50 p-4 rounded-lg shadow-md hover:bg-white transition duration-300 border-l-4 border-green-600">
+                    <div class="flex items-start gap-4">
+                        <i class="fas fa-check-square text-green-600 text-3xl mt-1"></i>
+                        <p class="text-lg font-semibold text-gray-800">শারীরিক শক্তিকে বৃদ্ধি করে এবং বিষন্নতাকে দূর করে।</p>
+                    </div>
+                </div>
+                <!-- Item 7 -->
+                <div class="bg-white/50 p-4 rounded-lg shadow-md hover:bg-white transition duration-300 border-l-4 border-green-600">
+                    <div class="flex items-start gap-4">
+                        <i class="fas fa-check-square text-green-600 text-3xl mt-1"></i>
+                        <p class="text-lg font-semibold text-gray-800">কাজের শতভাগ গ্যারান্টি, গ্যারান্টি, গ্যারান্টি।</p>
+                    </div>
+                </div>
+                <!-- Item 8 -->
+                <div class="bg-white/50 p-4 rounded-lg shadow-md hover:bg-white transition duration-300 border-l-4 border-green-600">
+                    <div class="flex items-start gap-4">
+                        <i class="fas fa-check-square text-green-600 text-3xl mt-1"></i>
+                        <p class="text-lg font-semibold text-gray-800">লনেক্স ট্যাবলেটটি প্রেশার, ডায়াবেটিস এবং হার্টের রোগীদের জন্য সম্পূর্ণ নিরাপদ এবং অত্যন্ত অত্যন্ত কার্যকর একটি আয়ুর্বেদিক মেডিসিন।</p>
+                    </div>
+                </div>
+                <!-- Item 9 -->
+                <div class="bg-white/50 p-4 rounded-lg shadow-md hover:bg-white transition duration-300 border-l-4 border-green-600 md:col-span-2">
+                    <div class="flex items-start gap-4 justify-center">
+                        <i class="fas fa-check-square text-green-600 text-3xl mt-1"></i>
+                        <p class="text-lg font-semibold text-gray-800 text-center">কাজ হবেই হবে ইনশাআল্লাহ, ইনশাআল্লাহ, ইনশাআল্লাহ।</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="mt-12 text-center">
+                <a href="#order" class="btn-pulse bg-gray-800 hover:bg-black text-white font-bold text-2xl py-4 px-10 rounded-lg border-4 border-white inline-flex items-center gap-3 transition shadow-xl">
+                    অর্ডার করতে এখানে ক্লিক করুন 
+                    <i class="fas fa-shopping-bag"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: REVIEWS -->
+    <section class="bg-[#F8F6F8] py-16">
+        <div class="container mx-auto px-4 max-w-6xl text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-green-700 mb-4">সম্মানিত কাস্টমারদের রিভিউ</h2>
+            <div class="flex justify-center gap-1 mb-6 text-yellow-400 text-3xl">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <h3 class="text-xl md:text-2xl font-semibold text-gray-800 mb-10">আমাদের কাস্টমাররা প্রতিনিয়ত আমাদের থেকে পণ্য নিয়ে তাদের মতামত প্রকাশ করেছে।</h3>
+
+            <!-- Review Carousel Simulation -->
+            <div class="overflow-x-auto pb-8 flex gap-6 snap-x">
+                <div class="snap-center shrink-0 w-80 md:w-96">
+                    <img src="https://www.healthandhousebd.com/wp-content/uploads/2025/07/cccccccccccs.jpeg" class="rounded-xl border shadow-lg w-full">
+                </div>
+                <div class="snap-center shrink-0 w-80 md:w-96">
+                    <img src="https://www.healthandhousebd.com/wp-content/uploads/2025/07/cccccccs.jpeg" class="rounded-xl border shadow-lg w-full">
+                </div>
+                <div class="snap-center shrink-0 w-80 md:w-96">
+                    <img src="https://www.healthandhousebd.com/wp-content/uploads/2025/07/ccccs-1.jpeg" class="rounded-xl border shadow-lg w-full">
+                </div>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="mt-8">
+                <a href="#order" class="btn-pulse bg-green-700 hover:bg-green-800 text-white font-bold text-2xl py-4 px-10 rounded-lg border-2 border-white inline-flex items-center gap-3 transition">
+                    অর্ডার করতে এখানে ক্লিক করুন 
+                    <i class="fas fa-shopping-bag"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: USAGE RULES (PURPLE) -->
+    <section class="bg-brand-purple py-12">
+        <div class="container mx-auto px-4 max-w-4xl text-center">
+            <div class="bg-[#209863] border-2 border-white rounded-lg p-4 mb-8 shadow-xl inline-block px-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-white drop-shadow-md">খাবার নিয়ম</h2>
+            </div>
+            
+            <div class="bg-[#5d9dfb] border-2 border-black rounded-lg p-8 shadow-lg">
+                <h3 class="text-2xl md:text-3xl font-bold text-black leading-relaxed">
+                    খাবার নিয়ম একদিন পরপর একটা করে ট্যাবলেট খাবেন রাতের বেলা খাবার পরে
+                </h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: PRICING -->
+    <section class="bg-[#f59bed] py-12">
+        <div class="container mx-auto px-4 max-w-4xl text-center">
+            <h2 class="text-4xl font-bold text-purple-900 mb-8 drop-shadow-md">মূল্য তালিকা</h2>
+
+            <!-- Pricing Box 1 -->
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-6 border-l-8 border-red-500 text-left md:text-center transform hover:scale-105 transition">
+                <p class="text-xl md:text-2xl text-red-600 font-bold mb-2">
+                    <span class="text-gray-600 font-normal">বক্সে ৩০ পিস ট্যাবলেট আছে,</span> দুই মাসের জন্য ফুল কোর্স
+                </p>
+            </div>
+
+            <!-- Pricing Box 2 -->
+            <div class="bg-[#09FF2B82] border border-red-700 rounded-lg p-4 mb-4 shadow-md max-w-2xl mx-auto">
+                <p class="text-xl md:text-2xl font-bold text-red-700">
+                    ফুল কোর্স পূর্বের মূল্য <span class="line-through decoration-black decoration-2">১০০০</span> টাকা
+                </p>
+            </div>
+
+            <!-- Pricing Box 3 (Offer) -->
+            <div class="bg-[#4FFFE6A6] border border-green-900 rounded-lg p-4 mb-6 shadow-md max-w-2xl mx-auto animate-bounce">
+                <p class="text-2xl md:text-3xl font-bold text-red-800">
+                    ফুল কোর্স অফার মূল্য ৮০০ টাকা
+                </p>
+            </div>
+
+            <div class="mb-8">
+                <p class="text-2xl font-bold text-blue-600">
+                    কাজের <span class="text-red-600 border-b-4 border-double border-red-600">১০০% গ্যারান্টি, গ্যারান্টি, গ্যারান্টি।</span>
+                </p>
+                <p class="text-xl mt-4 font-bold">
+                    কাজ হবেই হবে <span class="font-extrabold">ইনশাআল্লাহ, ইনশাআল্লাহ, ইনশাআল্লাহ</span>
+                </p>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="mt-8">
+                <a href="#order" class="bg-green-700 hover:bg-green-800 text-white font-bold text-2xl py-4 px-10 rounded-lg border-2 border-white inline-flex items-center gap-3 transition shadow-lg">
+                    অর্ডার করতে এখানে ক্লিক করুন 
+                    <i class="fas fa-shopping-bag"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: CHECKOUT FORM -->
+    <section id="order" class="bg-form-green py-12">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900">অর্ডার করতে নিচের ফরমটি পূরন করুন‌</h2>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-2xl p-6 md:p-8 border-t-4 border-green-500">
+                <form action="#" method="POST" class="space-y-6">
+                    
+                    <!-- Product Selection (Visual only for this template) -->
+                    <div class="bg-gray-50 p-4 rounded border">
+                        <h3 class="font-bold text-xl mb-4">আপনার প্রোডাক্ট পছন্দ করুন</h3>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-4">
+                                <img src="https://www.healthandhousebd.com/wp-content/uploads/2025/10/f78a98b6-5c51-4cfe-8ce1-8c56fa5d4947-300x300.jpeg" class="w-16 h-16 rounded object-cover" alt="Product">
+                                <span class="font-semibold text-lg">লনেক্স ট্যাবলেট</span>
+                            </div>
+                            <div class="font-bold text-lg">৳ ৮০০.০০</div>
+                        </div>
+                    </div>
+
+                    <!-- Billing Fields -->
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 text-green-700">Billing details</h3>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block font-medium mb-1">নাম লিখুন <span class="text-red-500">*</span></label>
+                                <input type="text" placeholder="আপনার নাম লিখুন" class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:border-green-500 transition" required>
+                            </div>
+                            
+                            <div>
+                                <label class="block font-medium mb-1">ঠিকানা লিখুন <span class="text-red-500">*</span></label>
+                                <input type="text" placeholder="আপনার ঠিকানা লিখুন" class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:border-green-500 transition" required>
+                            </div>
+                            
+                            <div>
+                                <label class="block font-medium mb-1">মোবাইল নম্বর লিখুন <span class="text-red-500">*</span></label>
+                                <input type="tel" placeholder="আপনার মোবাইল নম্বর লিখুন" class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:border-green-500 transition" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Order Summary -->
+                    <div class="bg-gray-100 p-5 rounded">
+                        <h3 class="text-lg font-bold mb-3 border-b pb-2">Your Order</h3>
+                        <div class="flex justify-between mb-2">
+                            <span>লনেক্স ট্যাবলেট × ১</span>
+                            <span class="font-bold">৳ ৮০০.০০</span>
+                        </div>
+                        <div class="flex justify-between mb-2 text-sm text-gray-600">
+                            <span>Shipping</span>
+                            <span>Free shipping</span>
+                        </div>
+                        <div class="flex justify-between font-bold text-xl border-t pt-2 mt-2">
+                            <span>Total</span>
+                            <span>৳ ৮০০.০০</span>
+                        </div>
+                    </div>
+
+                    <!-- Payment Method -->
+                    <div class="bg-gray-50 p-4 rounded border">
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="radio" name="payment" checked class="w-5 h-5 text-green-600">
+                            <span class="font-bold">ক্যাশ অন ডেলিভারি</span>
+                        </label>
+                        <p class="text-sm text-gray-600 ml-8 mt-1">প্রোডাক্ট হাতে পেয়ে মূল্য পরিশোধ করুন</p>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full bg-[#F99200] hover:bg-orange-600 text-white font-black text-xl md:text-2xl py-4 rounded shadow-lg transition duration-200 animate-pulse">
+                        অর্ডার কনফার্ম করতে এখানে ক্লিক করুন মূল্য ৮০০ টাকা
+                    </button>
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simple Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-6 text-center text-sm">
+        <p>&copy; 2025 Health and House BD. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
