@@ -361,17 +361,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </footer>
 
-    <!-- Logic Script -->
+    
+   <!-- Logic Script -->
     <script>
         // API Configuration
         const WORDPRESS_SITE_URL = "https://the.healthherb.store"; 
         const CONSUMER_KEY = "ck_865e30bc7cb9bd1435487a2b9d979486da2fa696"; 
         const CONSUMER_SECRET = "cs_2076f228f519207c5c85d05056087ba6ebe58810"; 
         const PRODUCT_ID = 699; 
-        const PRODUCT_NAME = "Lonex"; // Updated Name
+        const PRODUCT_NAME = "Lonex Tablet (Full Course)"; 
         
-        // Price
-        const PRODUCT_PRICE = "800"; 
+        // ফিক্স ১: দাম এখন সংখ্যা (Number) হিসেবে আছে
+        const PRODUCT_PRICE = 800; 
 
         // Scroll Function
         function scrollToCheckout() {
@@ -419,7 +420,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 status: "processing",
                 billing: { first_name: name, phone: phone, address_1: address, country: "BD" },
                 shipping: { first_name: name, address_1: address, country: "BD" },
-                line_items: [{ product_id: PRODUCT_ID, quantity: 1, total: PRODUCT_PRICE }],
+                // API তে দাম স্ট্রিং হিসেবে পাঠানো হচ্ছে
+                line_items: [{ product_id: PRODUCT_ID, quantity: 1, total: PRODUCT_PRICE.toString() }],
                 shipping_lines: [{ method_id: "free_shipping", method_title: "Free Shipping", total: "0.00" }]
             };
 
@@ -433,10 +435,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 const result = await response.json();
 
                 if (response.ok) {
-                    // GTM Event
+                    
+                    // ==========================================
+                    // ✅ GTM DataLayer Push (আপডেট করা হয়েছে)
+                    // ==========================================
                     window.dataLayer = window.dataLayer || [];
                     window.dataLayer.push({
-                        'event': 'purchase',
+                        'event': 'custom_purchase', // ট্রিগার নাম
+                        
+                        // Top Level Data (সহজ ট্র্যাকিং এর জন্য)
+                        'value': PRODUCT_PRICE,
+                        'currency': 'BDT',
+                        'transaction_id': result.id,
+
+                        // Ecommerce Data (GA4 এর জন্য)
                         'ecommerce': {
                             'currency': 'BDT',
                             'value': PRODUCT_PRICE,
@@ -447,21 +459,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 'price': PRODUCT_PRICE,
                                 'quantity': 1
                             }]
+                        },
+
+                        // User Data (Facebook Advanced Matching এর জন্য)
+                        'user_data': {
+                            'phone': phone,
+                            'name': name
                         }
                     });
 
-                    // Success Message
+                    // Success Message & Redirect logic
                     Swal.fire({
                         icon: 'success',
                         title: 'অর্ডার সফল হয়েছে! 🎉',
-                        text: 'আমাদের প্রতিনিধি শীঘ্রই আপনার সাথে যোগাযোগ করবে।',
+                        text: 'ধন্যবাদ, আপনার অর্ডারটি গ্রহণ করা হয়েছে।',
                         confirmButtonColor: '#7f1d1d',
-                        confirmButtonText: 'ধন্যবাদ'
+                        confirmButtonText: 'ধন্যবাদ',
+                        showConfirmButton: false,
+                        timer: 2000 // ২ সেকেন্ড সময় দেওয়া হলো GTM ফায়ার হওয়ার জন্য
                     }).then(() => {
-                        window.location.reload(); 
+                        // success.html পেজটি আপনার সার্ভারে থাকতে হবে
+                        window.location.href = "success.html"; 
                     });
-
-                    document.getElementById('checkout-form').reset();
 
                 } else {
                     throw new Error(result.message || 'API Error');
